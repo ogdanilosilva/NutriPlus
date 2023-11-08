@@ -385,20 +385,18 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
 }
 
 .plano-alimentacao td{
     width: 200px;
     font-size: 18px;
-}
-
-.plano-alimentacao table {
-    margin-top: 50px;
-}
+    text-align: left;
+}    
 
 .card-plano-alimentacao {
     width: 1200px;
-    height: 450px;
+    height: 470px;
     background-color: #5ECB79;
     border-radius: 15px;
     display: flex;
@@ -420,4 +418,5 @@ nav a {
 
 .card-plano-alimentacao td:nth-child(1) {
     text-align: left;
+    padding-right: 25px;
 }
