@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/logo-2.svg" type="image/x-icon">
     <title>Login</title>
 </head>
 <body>
@@ -12,13 +16,13 @@
             <div class="logotipo-login">
                 <img src="../images/logo.svg" alt="">
             </div>
-            <form action="../pages/tela-membros.html">
-                <label for="">Usuário:</label>
-                <input type="text" id="user">
-                <label for="">Senha:</label>
-                <input type="password">
+            <form onsubmit="validarLogin(event)">
+                <label for="user">Usuário:</label>
+                <input type="text" id="user" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" required>
                 <div class="forgot-password">
-                    <a href="">Esqueci minha senha</a>
+                    <a href="#">Esqueci minha senha</a>
                 </div>
                 <div class="buttom-form">
                     <button type="submit">Continuar</button>
@@ -26,5 +30,24 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function validarLogin(event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById("user").value;
+            const senha = document.getElementById("senha").value;
+
+            // Lógica de validação do usuário e senha
+            // Aqui você pode comparar as credenciais com algum banco de dados ou dados predefinidos
+
+            // Exemplo de validação simples (usuário: "admin", senha: "12345")
+            if (usuario === "admin" && senha === "12345") {
+                window.location.href = "../pages/tela-membros.html"; // Redireciona para a página de membros
+            } else {
+                alert("Credenciais inválidas. Por favor, tente novamente.");
+            }
+        }
+    </script>
 </body>
 </html>
